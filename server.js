@@ -8,7 +8,10 @@ const controllers = require('./controllers');
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
 app.listen(port, () => console.log(`Product Overview API listening on port ${port}!`));
-
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
 
 app.get('/products/list', (req, res) => {
   controllers.list(req.query.page, req.query.count, result => res.send(result));

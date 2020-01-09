@@ -99,13 +99,18 @@ module.exports.styles = (product_id, callback) => {
           photos: [],
           skus: {}
         };
-        urls, thumbs = [];
+        urls = [];
+        thumbs = [];
       } 
       if (style.style_id === undefined) {
         style.style_id = res.rows[i].id;
         style.name = res.rows[i].name;
         style.original_price = res.rows[i].default_price;
-        style.sale_price = res.rows[i].sale_price;
+        if (res.rows[i].sale_price) {
+          style.sale_price = res.rows[i].sale_price;
+        } else {
+          style.sale_price = '0';
+        }
         style['default?'] = res.rows[i].default_style;
       }
       style.skus[res.rows[i].size] = res.rows[i].quantity;
