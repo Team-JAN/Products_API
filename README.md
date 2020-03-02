@@ -9,4 +9,8 @@ The microservice is designed to handle the 4 endpoints used in the Product Overv
 * PostgreSQL
 * Express
 * Deployed to Amazon Web Services (AWS)
-* 
+
+Stress tested with:
+* New Relic
+* K6
+* Loader.io
