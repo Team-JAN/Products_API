@@ -6,6 +6,7 @@ NOTICE: This repository does not contain the data required to use the API proper
 The microservice is designed to handle the 4 endpoints used in the Product Overview section of that project. These endpoints are optimized using table joins and sifting through the combined tables, and the data is indexed. Every endpoint responds in under 50ms, even under moderate stress (100 requests/second).
 
 ### Built With
+* JavaScript
 * PostgreSQL
 * Express
 * Deployed to Amazon Web Services (AWS)
